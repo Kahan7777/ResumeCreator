@@ -4,8 +4,8 @@ from flask_login import UserMixin
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     #for login/register . Name will also be used in the Resume
-    name = db.Column(db.String(20))
-    password = db.Column(db.String(60))
+    name = db.Column(db.String(100))
+    password = db.Column(db.String(100))
 
     #Now basic things that will be displayed near the heading(sub)
     age = db.Column(db.Integer)

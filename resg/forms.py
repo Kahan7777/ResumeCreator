@@ -9,7 +9,7 @@ class RF(FlaskForm):
     pwd = PasswordField('Password',
                            validators=[DataRequired(), Length(min=8, max=30)])
     age = IntegerField("Age",
-                       validators=[DataRequired(), Length(min=16, max=90)])
+                       validators=[DataRequired()])
     residence = StringField('Residence',
                             validators=[DataRequired()])
     prof = StringField('Current Or Last Job',
