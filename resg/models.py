@@ -1,7 +1,11 @@
-from resg import db
+from resg import db, login_manager
 from flask_login import UserMixin
 
-class User(db.Model):
+@login_manager.user_loader
+def get_user(ident):
+  return User.query.get(int(ident))
+
+class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
     #for login/register . Name will also be used in the Resume
     name = db.Column(db.String(100))

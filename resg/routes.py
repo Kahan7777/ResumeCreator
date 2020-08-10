@@ -3,7 +3,7 @@ import secrets
 from PIL import Image
 from flask import render_template, url_for, flash, redirect, request, abort
 from resg import app, db, bcrypt
-from resg.forms import RF
+from resg.forms import RF, LF
 from resg.models import User
 from flask_login import login_user, current_user, logout_user, login_required
 #SlenderBot Chromium
@@ -46,4 +46,16 @@ def register():
         flash(f'Account created for {form.name.data}!', 'success')
         return redirect(url_for('home'))
     return render_template("register.html", form=form)
-
+@app.route("/login", methods=['POST', 'GET'])
+def login():
+    form = LF()
+    if form.validate_on_submit():
+        user = User.query.filter_by(name=form.username.data).first()
+        if user and bcrypt.check_password_hash(user.password, form.password.data):
+            login_user(user)
+            return redirect(url_for('home'))
+        else:
+            flash("Uncessesful", "danger")
+            
+    return render_template("login.html", form=form)
+        

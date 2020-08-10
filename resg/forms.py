@@ -56,6 +56,11 @@ class RF(FlaskForm):
                       validators=[])
     submit = SubmitField("Sign Up")
 
-    
+class LF(FlaskForm):
+    username = StringField("Username",
+                           validators=[DataRequired()])
+    password = PasswordField("Password",
+                             validators=[DataRequired()])
+    submit = SubmitField("Sign In")
     
     
