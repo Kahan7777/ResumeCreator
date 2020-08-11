@@ -1,10 +1,12 @@
 {% extends "layout.html"%}
 {% block content %}
+<div class="container" style="  padding-top: 200px;padding-left: 355px">
   <div class="content-section">
     <form method="POST" action="">
       {{ form.hidden_tag() }}
+        <p style="font-family:'Lobster', cursive; font-size: 50px;">SlendEr</p>
       <fieldset class="form-group">
-        <legend class="border-bottom mb-4 mt-1">Login Now!</legend>
+        <legend class="border-bottom mb-2 mt-1"><h6>Welcome Back! Please Sign In</h6></legend>
         <div class="form-group">
           {{ form.username.label(class="form-control-label") }}
 
@@ -35,9 +37,10 @@
         </div>
       </fieldset>
       <div class="form-group">
-          {{ form.submit(class="btn btn-outline-info") }}
+          {{ form.submit(class="btn btn-dark") }}
       </div>
       </form>
+      <p>Need An Account?<a href="">Sign up for free</a></p>
     </div>
-
+</div>
 {% endblock content %}
