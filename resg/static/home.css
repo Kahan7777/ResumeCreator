@@ -1,17 +1,12 @@
-.masthead {
-  height: 100vh;
-  min-height: 500px;
-  background-size: cover;
-  background-position: center;
-}
+
 .lead{
 font-family:'Lobster', cursive;
 }
 .features-icons {
-
-  padding-top: 5rem;
+  padding-top: 7rem;
   padding-bottom: 7rem;
   padding-left: 7rem;
+  padding-right: 10rem;
 }
 
 .features-icons .features-icons-item {
@@ -19,14 +14,13 @@ font-family:'Lobster', cursive;
 }
 
 .features-icons .features-icons-item .features-icons-icon {
-  height: 7rem;
 }
 
-.features-icons .features-icons-item .features-icons-icon i {
+.features-icons .features-icons-item .features-icons-icon{
   font-size: 4.5rem;
 }
 
-.features-icons .features-icons-item:hover .features-icons-icon i {
+.features-icons .features-icons-item:hover .features-icons-icon {
   font-size: 5rem;
 }
 .mast-bg {
