@@ -19,7 +19,7 @@ def register():
         hashed_password = bcrypt.generate_password_hash(form.pwd.data).decode('utf-8')
         usernew = User(name = form.name.data,
                        password = hashed_password,
-                       age = form.age.data,
+                        age = form.age.data,
                        residence = form.residence.data,
                        prof = form.prof.data,
                        ach1 = form.ach1.data,
@@ -45,7 +45,7 @@ def register():
         db.session.commit()
         flash(f'Account created for {form.name.data}!', 'success')
         return redirect(url_for('home'))
-    return render_template("register.html", form=form)
+    return render_template("register1.html", form=form)
 @app.route("/login", methods=['POST', 'GET'])
 def login():
     form = LF()
@@ -64,3 +64,15 @@ def login():
 def logout():
     logout_user()
     return redirect(url_for("home"))
+@app.route("/account")
+@login_required
+def account():
+    skills = str(current_user.skills1) + " | " + str(current_user.skills2) + " | " + str(current_user.skills3) + " | " + str(current_user.skills4) + " | " 
+    return render_template('account.html', skills=skills)
+
+@app.route("/home-resumes")
+@login_required
+def home_resumes():
+    return render_template("home-resume.html")
+
+    
