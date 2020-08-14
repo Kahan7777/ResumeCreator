@@ -1,14 +1,17 @@
 {% extends 'layout.html' %}
 {% block content %}
+   <br>
+   <br>
+   <br>
   <div style="background-color:#ACF8DA">
     <div class=" text-center" style="margin:30px;border-radius:30px; background-color:#A98CFF">
 		<div class="container">
 			<div class="row text-center">
 				<div class="col-lg-6 offset-lg-1">
-					<h1 class="display-4">User's Name</h1>
+					<h1 class="display-4">{{ current_user.name }}</h1>
 				</div>
 				<div class="col-lg-5 ">
-					<h2 class="display-4" style="font-size:200%">Proffesion</h2>
+					<h2 class="display-4" style="font-size:200%">{{ current_user.prof }}</h2>
 					<p class="text-muted">__ | __ | __ | __</p>
 				</div>
 				
@@ -18,20 +21,20 @@
 		   <div class="row text-center">
 			   <div class="col-lg-5 offset-rg-1  text-left" style="border-radius:20px; border:1px solid black">
 				   <ul>
-					   <li class="text-black-50"><h2 class="text-black-50">Achievement1 </h2></li>
-					   <li class="text-black-50"><h2 class="text-black-50">Achievement2</h2></li>
-				   	   <li class="text-black-50"><h2 class="text-black-50">Achievement3 </h2></li>
-					   <li class="text-black-50"><h2 class="text-black-50">Achievement4</h2></li>
+					   <li class="text-black-50"><h2 class="text-black-50">{{ current_user.ach1 }} </h2></li>
+					   <li class="text-black-50"><h2 class="text-black-50">{{ current_user.ach2 }}</h2></li>
+				   	   <li class="text-black-50"><h2 class="text-black-50">{{ current_user.ach3 }} </h2></li>
+					   <li class="text-black-50"><h2 class="text-black-50">{{ current_user.ach4 }}</h2></li>
 					   
 				   </ul>
 				   
 			   </div>
 			   <div class="col-lg-5 offset-lg-2  text-left" style="border-radius:20px; border:1px solid black">
 				   <ul>
-					   <li class="text-black-50"><h2 class="text-black-50">Skill1 </h2></li>
-					   <li class="text-black-50"><h2 class="text-black-50">Skill2</h2></li>
-				   	   <li class="text-black-50"><h2 class="text-black-50">Skill3 </h2></li>
-					   <li class="text-black-50"><h2 class="text-black-50">Skill4</h2></li>
+					   <li class="text-black-50"><h2 class="text-black-50">{{ current_user.skills1 }}</h2></li>
+					   <li class="text-black-50"><h2 class="text-black-50">{{ current_user.skills2 }}</h2></li>
+				   	   <li class="text-black-50"><h2 class="text-black-50">{{ current_user.skills3 }}</h2></li>
+					   <li class="text-black-50"><h2 class="text-black-50">{{ current_user.skills4 }}</h2></li>
 				   </ul>
 			   </div>
 		   </div>
@@ -46,7 +49,7 @@
              <div class="card" style="border-radius:10px; border:1px solid #D9F9F7">
                 <div class="card-body">
                    <h4 class="card-title">Project 1</h4>
-                   <p class="card-text">Project description </p>
+                   <p class="card-text">{{ project1 }}</p>
                    <br>
                 </div>
              </div>
@@ -55,7 +58,7 @@
              <div class="card" style="border-radius:10px; border:1px solid #D9F9F7">
                 <div class="card-body">
                    <h4 class="card-title">Project 2</h4>
-                   <p class="card-text">Project description </p>
+                   <p class="card-text">{{ project2 }}</p>
                    <br>
                 </div>
              </div>
@@ -64,7 +67,7 @@
              <div class="card" style="border-radius:10px; border:1px solid #D9F9F7">
                 <div class="card-body">
                    <h4 class="card-title">Project 3</h4>
-                   <p class="card-text">Project description </p>
+                   <p class="card-text">{{ project3 }}</p>
                    <br>
                 </div>
              </div>
@@ -73,7 +76,7 @@
              <div class="card" style="border-radius:10px; border:1px solid #D9F9F7">
                 <div class="card-body">
                    <h4 class="card-title">Project 4</h4>
-                   <p class="card-text">Project description </p>
+                   <p class="card-text">{{ project4 }}</p>
                    <br>
                 </div>
              </div>
@@ -86,7 +89,7 @@
        <br/>
        <br/>
        <div class="row">
-          <div class="col-md-4 text-left offset-lg-1">
+          <div class="col-md-5 text-left offset-lg-1">
              <div class="card">
                 <div class="card-body">
 					<h3>Schools And <strong>Colleges</strong></h3>
@@ -94,18 +97,18 @@
 						<div class="col-md-6 ">
 							<ul>
 								<div class="text-muted">
-									<li><h6>Age</h6></li>
-									<li><h6>School Name</h6></li>
-									<li><h6>DoF</h6></li>
+									<li><h6>{{ current_user.age }}</h6></li>
+									<li><h6>{{ current_user.schoolname }}</h6></li>
+									<li><h6>{{ current_user.date }}</h6></li>
 								</div>
 							</ul>
 						</div>
 						<div class="col-md-6">
 							<ul>
 								<div class="text-muted">
-									<li><h6>Degree</h6></li>
-									<li><h6>Study</h6></li>
-									<li><h6>Employer</h6></li>
+									<li><h6>{{ current_user.degree }}</h6></li>
+									<li><h6>{{ current_user.study }}</h6></li>
+									<li><h6>{{ current_user.employer }}</h6></li>
 								</div>
 							</ul>
 						</div>
@@ -113,12 +116,12 @@
                 </div>
              </div>
           </div>
-          <div class="text-center col-md-4 offset-lg-2">
+          <div class="text-center col-md-5 offset-lg-1">
              <div class="card">
                 <div class="card-body">
                    <h3>More <strong>Info</strong></h3>
-					<p>Residence</p>
-					<p>Jobtitle</p>
+					<p>{{ current_user.residence }}</p>
+					<p>{{ current_user.jobtitle }}</p>
                 </div>
              </div>
           </div>
