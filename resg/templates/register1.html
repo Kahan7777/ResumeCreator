@@ -1,17 +1,19 @@
 {% extends "layout.html"%}
 {% block content %}
-  <div class="content-section">
+  <div class="container">
+    <div class="row">
     <form method="POST" action="">
       {{ form.hidden_tag() }}
       <fieldset class="form-group">
           <h1></h1>
           <h1></h1>
         <legend class="border-bottom mb-4 mt-1">Register Now!</legend>
-        <div class="container">
-            <div class="row" style="border:1px solid #C9CECF; border-radius: 25px; background-color:#C9CECF;">
-                <div class="col-md-6">
-                    <div class="form-group">
-                      {{ form.name.label(class="form-control-label") }}
+        <div class="container" style="padding-left: 100px; font-family: 'Poppins">
+                <h2 class="title"> Sign Up for <span style="font-family: 'Lobster'">SlendEr</span>!</h2>
+            <div class="form-row" style="padding-top: 35px">
+              <div class="col">
+              <div class="form-group">
+                {{ form.name.label(class="form-control-label") }}
 
                       {% if form.name.errors %}
                           {{ form.name(class="form-control form-control-lg is-invalid") }}
@@ -23,12 +25,7 @@
                       {% else %}
                           {{ form.name(class="form-control form-control-lg") }}
                       {% endif %}
-                      
-                  </div>
-                </div>
-                <div class="col-md-6">
-                
-                  <div class="form-group">
+
                       {{ form.pwd.label(class="form-control-label") }}
 
                       {% if form.pwd.errors %}
@@ -41,13 +38,10 @@
                       {% else %}
                           {{ form.pwd(class="form-control form-control-lg") }}
                       {% endif %}
-                  </div>
-                </div>
-          </div>
-          <div class="form-group">
-              {{ form.age.label(class="form-control-label") }}
 
-              {% if form.age.errors %}
+                    {{ form.age.label(class="form-control-label") }}
+
+                  {% if form.age.errors %}
                   {{ form.age(class="form-control form-control-lg is-invalid") }}
                   <div class="invalid-feedback">
                       {% for error in form.age.errors %}
@@ -56,11 +50,8 @@
                   </div>
               {% else %}
                   {{ form.age(class="form-control form-control-lg") }}
-              {% endif %}
-              
-          </div>
-          <div class="form-group">
-              {{ form.residence.label(class="form-control-label") }}
+              {% endif %}  
+                    {{ form.residence.label(class="form-control-label") }}
 
               {% if form.residence.errors %}
                   {{ form.residence(class="form-control form-control-lg is-invalid") }}
@@ -72,12 +63,13 @@
               {% else %}
                   {{ form.residence(class="form-control form-control-lg") }}
               {% endif %}
-              
-          </div>
-          <div class="form-group">
-              {{ form.prof.label(class="form-control-label") }}
+              </div>
+            </div>
+            <div class="col" style="padding-left: 50px">
+                     <div class="form-group">
+                  {{ form.prof.label(class="form-control-label") }}
 
-              {% if form.prof.errors %}
+                  {% if form.prof.errors %}
                   {{ form.prof(class="form-control form-control-lg is-invalid") }}
                   <div class="invalid-feedback">
                       {% for error in form.prof.errors %}
@@ -87,69 +79,9 @@
               {% else %}
                   {{ form.prof(class="form-control form-control-lg") }}
               {% endif %}
-              
-          </div>
-          <div class="form-group">
-              {{ form.ach1.label(class="form-control-label") }}
 
-              {% if form.ach1.errors %}
-                  {{ form.ach1(class="form-control form-control-lg is-invalid") }}
-                  <div class="invalid-feedback">
-                      {% for error in form.ach1.errors %}
-                          <span>{{ error }}</span>
-                      {% endfor %}
-                  </div>
-              {% else %}
-                  {{ form.ach1(class="form-control form-control-lg") }}
-              {% endif %}
-              
-          </div><div class="form-group">
-              {{ form.ach2.label(class="form-control-label") }}
 
-              {% if form.ach2.errors %}
-                  {{ form.ach2(class="form-control form-control-lg is-invalid") }}
-                  <div class="invalid-feedback">
-                      {% for error in form.ach2.errors %}
-                          <span>{{ error }}</span>
-                      {% endfor %}
-                  </div>
-              {% else %}
-                  {{ form.ach2(class="form-control form-control-lg") }}
-              {% endif %}
-              
-          </div>
-          <div class="form-group">
-              {{ form.ach3.label(class="form-control-label") }}
-
-              {% if form.ach3.errors %}
-                  {{ form.ach3(class="form-control form-control-lg is-invalid") }}
-                  <div class="invalid-feedback">
-                      {% for error in form.ach3.errors %}
-                          <span>{{ error }}</span>
-                      {% endfor %}
-                  </div>
-              {% else %}
-                  {{ form.ach3(class="form-control form-control-lg") }}
-              {% endif %}
-              
-          </div>
-          <div class="form-group">
-              {{ form.ach4.label(class="form-control-label") }}
-
-              {% if form.ach4.errors %}
-                  {{ form.ach4(class="form-control form-control-lg is-invalid") }}
-                  <div class="invalid-feedback">
-                      {% for error in form.ach4.errors %}
-                          <span>{{ error }}</span>
-                      {% endfor %}
-                  </div>
-              {% else %}
-                  {{ form.ach4(class="form-control form-control-lg") }}
-              {% endif %}
-              
-          </div>
-                  <div class="form-group">
-              {{ form.jobtitle.label(class="form-control-label") }}
+                    {{ form.jobtitle.label(class="form-control-label") }}
 
               {% if form.jobtitle.errors %}
                   {{ form.jobtitle(class="form-control form-control-lg is-invalid") }}
@@ -161,9 +93,8 @@
               {% else %}
                   {{ form.jobtitle(class="form-control form-control-lg") }}
               {% endif %}
-              
-          </div>
-          <div class="form-group">
+
+
               {{ form.employer.label(class="form-control-label") }}
 
               {% if form.employer.errors %}
@@ -176,10 +107,75 @@
               {% else %}
                   {{ form.employer(class="form-control form-control-lg") }}
               {% endif %}
-              
+            </div>
+
+
           </div>
-          <div class="form-group">
-              {{ form.schoolname.label(class="form-control-label") }}
+          </div>
+          <hr></hr>
+
+          <div class="form-row">
+         
+           <div class="col">   
+           <div class="form-group">
+              {{ form.ach1.label(class="form-control-label") }}
+
+              {% if form.ach1.errors %}
+                  {{ form.ach1(class="form-control form-control-lg is-invalid") }}
+                  <div class="invalid-feedback">
+                      {% for error in form.ach1.errors %}
+                          <span>{{ error }}</span>
+                      {% endfor %}
+                  </div>
+              {% else %}
+                  {{ form.ach1(class="form-control form-control-lg") }}
+              {% endif %}
+                  {{ form.ach2.label(class="form-control-label") }}
+
+              {% if form.ach2.errors %}
+                  {{ form.ach2(class="form-control form-control-lg is-invalid") }}
+                  <div class="invalid-feedback">
+                      {% for error in form.ach2.errors %}
+                          <span>{{ error }}</span>
+                      {% endfor %}
+                  </div>
+              {% else %}
+                  {{ form.ach2(class="form-control form-control-lg") }}
+              {% endif %}
+              
+
+               {{ form.ach3.label(class="form-control-label") }}
+
+              {% if form.ach3.errors %}
+                  {{ form.ach3(class="form-control form-control-lg is-invalid") }}
+                  <div class="invalid-feedback">
+                      {% for error in form.ach3.errors %}
+                          <span>{{ error }}</span>
+                      {% endfor %}
+                  </div>
+              {% else %}
+                  {{ form.ach3(class="form-control form-control-lg") }}
+              {% endif %}
+
+
+               {{ form.ach4.label(class="form-control-label") }}
+
+              {% if form.ach4.errors %}
+                  {{ form.ach4(class="form-control form-control-lg is-invalid") }}
+                  <div class="invalid-feedback">
+                      {% for error in form.ach4.errors %}
+                          <span>{{ error }}</span>
+                      {% endfor %}
+                  </div>
+              {% else %}
+                  {{ form.ach4(class="form-control form-control-lg") }}
+              {% endif %}
+          </div>
+        </div>
+        <div class = "col">
+          <div class="form-group" style="margin-left: 50px">
+
+                {{ form.schoolname.label(class="form-control-label") }}
 
               {% if form.schoolname.errors %}
                   {{ form.schoolname(class="form-control form-control-lg is-invalid") }}
@@ -191,9 +187,8 @@
               {% else %}
                   {{ form.schoolname(class="form-control form-control-lg") }}
               {% endif %}
-              
-          </div>
-          <div class="form-group">
+
+
               {{ form.degree.label(class="form-control-label") }}
 
               {% if form.degree.errors %}
@@ -206,9 +201,8 @@
               {% else %}
                   {{ form.degree(class="form-control form-control-lg") }}
               {% endif %}
-              
-          </div>
-          <div class="form-group">
+
+
               {{ form.study.label(class="form-control-label") }}
 
               {% if form.study.errors %}
@@ -222,8 +216,7 @@
                   {{ form.study(class="form-control form-control-lg") }}
               {% endif %}
               
-          </div>
-          <div class="form-group">
+
               {{ form.date.label(class="form-control-label") }}
 
               {% if form.date.errors %}
@@ -237,7 +230,14 @@
                   {{ form.date(class="form-control form-control-lg") }}
               {% endif %}
               
-          </div><div class="form-group">
+</div>
+          </div>
+          </div>
+          <hr></hr>
+
+         <div class="form-row">
+          <div class = "col">        
+          <div class="form-group">
               {{ form.skill1.label(class="form-control-label") }}
 
               {% if form.skill1.errors %}
@@ -251,8 +251,6 @@
                   {{ form.skill1(class="form-control form-control-lg") }}
               {% endif %}
               
-          </div>
-          <div class="form-group">
               {{ form.skill2.label(class="form-control-label") }}
 
               {% if form.skill2.errors %}
@@ -265,9 +263,7 @@
               {% else %}
                   {{ form.skill2(class="form-control form-control-lg") }}
               {% endif %}
-              
-          </div>
-          <div class="form-group">
+
               {{ form.skill3.label(class="form-control-label") }}
 
               {% if form.skill3.errors %}
@@ -280,9 +276,8 @@
               {% else %}
                   {{ form.skill3(class="form-control form-control-lg") }}
               {% endif %}
-              
-          </div>
-          <div class="form-group">
+
+
               {{ form.skill4.label(class="form-control-label") }}
 
               {% if form.skill4.errors %}
@@ -295,9 +290,12 @@
               {% else %}
                   {{ form.skill4(class="form-control form-control-lg") }}
               {% endif %}
-              
+              </div>
           </div>
-          <div class="form-group">
+
+          <div class="col">  
+          <div class="form-group" style="margin-left: 50px">      
+          
               {{ form.project1.label(class="form-control-label") }}
 
               {% if form.project1.errors %}
@@ -310,9 +308,8 @@
               {% else %}
                   {{ form.project1(class="form-control form-control-lg") }}
               {% endif %}
-              
-          </div>
-          <div class="form-group">
+
+
               {{ form.project2.label(class="form-control-label") }}
 
               {% if form.project2.errors %}
@@ -325,9 +322,7 @@
               {% else %}
                   {{ form.project2(class="form-control form-control-lg") }}
               {% endif %}
-              
-          </div>
-          <div class="form-group">
+
               {{ form.project3.label(class="form-control-label") }}
 
               {% if form.project3.errors %}
@@ -340,9 +335,7 @@
               {% else %}
                   {{ form.project3(class="form-control form-control-lg") }}
               {% endif %}
-              
-          </div>
-          <div class="form-group">
+
               {{ form.project4.label(class="form-control-label") }}
 
               {% if form.project4.errors %}
@@ -355,8 +348,10 @@
               {% else %}
                   {{ form.project4(class="form-control form-control-lg") }}
               {% endif %}
-              
+
+            </div>
           </div>
+
           </div>
       </fieldset>
       <div class="form-group">
@@ -364,4 +359,5 @@
       </div>
       </form>
   </div>
+</div>
 {% endblock content %}
