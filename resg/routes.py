@@ -55,7 +55,7 @@ def login():
             login_user(user)
             return redirect(url_for('home'))
         else:
-            flash("Uncessesful", "danger")
+            flash("Unsuccesful", "danger")
             
     return render_template("login.html", form=form)
         
