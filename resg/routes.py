@@ -74,5 +74,12 @@ def account():
 @login_required
 def home_resumes():
     return render_template("home-resume.html")
-
-    
+@app.route("/resume/1")
+@login_required
+def resume_1():
+    return render_template("template-1.html")
+@app.route("/resume/2")
+@login_required
+def resume_2():
+    return render_template("tem2.html")
+     

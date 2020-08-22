@@ -1,0 +1,133 @@
+{% extends "layout.html" %}
+{% block content %}
+		<br>
+		<br>
+		<br>
+	  <div class="container">
+	    <div class="row">
+	      <div class="lead col-lg-5" style="background-color:#BBBBBB; text-align:left; padding-left:50px; font-size: 230%; ">{{ current_user.name }}</div>
+	      <div class="col-lg-7 text-center" style="background-color:#BBBBBB; font-size:200%; border-left:2px solid black;">{{ current_user.prof }}</div>
+        </div>
+		<div class="row">
+		  <div class="col-lg-2">
+		    <div class="row">
+		      <div class="col-lg-1" style="border-left:10px ridge #2C84FD; m"><br><br><br><br><br><br><br><br><br><br><br><br><br></div>
+		      <div class="col-lg-4"><i class="fas fa-arrow-right" style="font-size: 24; color:#1CA0FA;"></i></div>
+	        </div>
+		  </div>
+		  <div class="col-lg-3">
+			  <h5>Achivements</h5>
+			  <div style="padding-left:20px;">
+				  <div class="card bg-light mb-1">
+                	<p>{{ current_user.ach1 }} </p>
+                 </div>
+				  
+				 <div class="card bg-light mb-1">
+                	<p>{{ current_user.ach1 }} </p>
+                 </div>
+				  
+				  <div class="card bg-light mb-1">
+                	<p>{{ current_user.ach1 }} </p>
+                 </div>
+				 
+				  <div class="card bg-light mb-1">
+                	<p>{{ current_user.ach1 }}</p>
+                 </div>
+				  
+		    </div>
+		  </div>
+		  <div class="col-lg-3">
+		    <div class="row">
+		      <div class="col-lg-2"><i class="fas fa-arrow-right" style="font-size:24px;color:#1CA0FA;"></i></div>
+		      <div class="col-lg-10">
+			    <h5>Skills</h5>
+				  <div style="padding-left:20px">
+				    <div class="card bg-light mb-1">
+						  <p>{{ current_user.skills1 }}</p>
+				    </div>
+				    <div class="card bg-light mb-1">
+						  <p>{{ current_user.skills1 }}</p>
+				    </div>
+				    <div class="card bg-light mb-1">
+						  <p>{{ current_user.skills1 }}</p>
+				    </div>
+				    <div class="card bg-light mb-1">
+						  <p>{{ current_user.skills1 }}</p>
+				    </div>
+					  <br>
+				  </div>
+			  </div>
+	        </div>
+		  </div>
+		  <div class="col-lg-3">
+		    <div class="row">
+			    <div class="col-lg-2"><i class="fas fa-arrow-right" style="font-size:24px;color:#1CA0FA;"></i></div>
+			    <div class="col-lg-10"><h5>Schools And Degrees</h5>
+				<div style="padding-left:20px;">
+					<div class="card bg-light mb-1">
+						  <p>{{ current_user.schoolname }}e</p>
+				  </div>
+				    <div class="card bg-light mb-1">
+						  <p>{{ current_user.degree }}</p>
+				  </div>
+				    <div class="card bg-light mb-1">
+						  <p>{{ current_user.study }}</p>
+				  </div>
+				    <div class="card bg-light mb-1">
+						  <p>{{ current_user.date }}</p>
+				  </div>
+				</div></div>
+		    </div>
+          </div>
+	    </div>
+		  <hr>
+	    <div style="border-top:9px solid #1D80E7">
+			  <br>
+			  <br>
+		  </div>
+	    <div class="row">
+		    <div class="col-lg-3"><div class="card">
+  
+  <div class="card-body">
+    <h4 class="card-title">Project-1</h4>
+    <p class="card-text">
+     {{ current_user.project1 }}
+    </p>
+    
+  </div>
+</div></div>
+		    <div class="col-lg-3"><div class="card">
+  
+  <div class="card-body">
+    <h4 class="card-title">Project-1</h4>
+    <p class="card-text">
+		{{ current_user.project2 }}
+    </p>
+    
+  </div>
+</div></div>
+		    <div class="col-lg-3"><div class="card">
+  
+  <div class="card-body">
+    <h4 class="card-title">Project-1</h4>
+    <p class="card-text">
+		{{ current_user.project3 }}
+    </p>
+    
+  </div>
+</div></div>
+		    <div class="col-lg-3"><div class="card">
+  
+  <div class="card-body">
+    <h4 class="card-title">Project-1</h4>
+    <p class="card-text">
+		{{ current_user.project4 }}
+    </p>
+    
+  </div>
+</div></div>
+	    </div>
+      </div>
+	  
+{% endblock content %}
+  

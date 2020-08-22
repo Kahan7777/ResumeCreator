@@ -1,0 +1,115 @@
+{% extends "layout.html" %}
+{% block content %}
+    <br>
+	<br>
+	  <br>
+	  <div style="border:2px dotted #000000">
+<div class="container">
+	  <div class="row" style="background-color:#5849c4">
+				  <div class="col-md-5 offset-lg-1">
+				  <p class="lead text-light" style="font-size: 200%"><b>{{ current_user.name }}</b></p>
+				  </div>
+				  <div class="col-md-6 " style="text-align: center">
+					  <h3 class=" lead text-white" style="font-size: 150%; padding:12px">{{ current_user.prof }}</h3>
+				  </div>
+			  </div>
+			  <hr>
+    			<div class="row">
+			    <div class="col-lg-6">
+					<div class="container-fluid">
+					<h3 style="padding-left:20px;border-bottom:2px solid #AAAAAA">Project-1</h3>
+					
+					<p style="margin-left: 40px">{{ current_user.project1 }}
+					</p>
+					<hr>
+					<hr>
+					</div>
+					<div class="container-fluid">
+					<h3 style="padding-left:20px;border-bottom:2px solid #AAAAAA">Project-2</h3>
+					
+					<p style="margin-left: 40px">{{ current_user.project2 }}
+					</p>
+					<hr>
+					<hr>
+					</div>
+					<div class="container-fluid">
+					<h3 style="padding-left:20px;border-bottom:2px solid #AAAAAA">Project-3</h3>
+					
+					<p style="margin-left: 40px">{{ current_user.project3 }}
+					</p>
+					<hr>
+					<hr>
+					</div>
+					<div class="container-fluid">
+					<h3 style="padding-left:20px;border-bottom:2px solid #AAAAAA">Project-4</h3>
+					
+					<p style="margin-left: 40px">{{ current_user.project4 }}
+					</p>
+					<hr>
+					<hr>
+					</div>
+					<div class="container-fluid">
+					<h3 style="padding-left:20px;border-bottom:2px solid #AAAAAA">Information</h3>
+					
+					<h5>{{ current_user.age }}</h5>
+					<h5>{{ current_user.residence }}</h5>
+					<hr>
+					<hr>
+					</div>
+				</div>
+			    <div class="offset-lg-1 col-lg-4">
+					<h3 style="font-size:50">Skills</h3>
+					<ul>
+						<li>{{ current_user.skills1 }}</li>
+						<li>{{ current_user.skills2 }}</li>
+						<li>{{ current_user.skills3 }}</li>
+						<li>{{ current_user.skills4 }}</li>
+					
+					</ul>
+					<hr>
+					<hr>
+					<h3 style="font-size:50">Achievments</h3>
+					<ul>
+						<li>{{ current_user.ach1 }}</li>
+						<li>{{ current_user.ach2 }}</li>
+						<li>{{ current_user.ach3 }}</li>
+						<li>{{ current_user.ach4 }}</li>
+					
+					</ul>
+					<hr>
+					<hr>
+					<h3 style="font-size:50">Education</h3>
+					<ul>
+						<li>{{ current_user.schoolname }}</li>
+						<li>{{ current_user.degree }}</li>
+						<li>{{ current_user.study }}</li>
+						<li>{{ current_user.date }}</li>
+					
+					</ul>
+					<hr>
+					<hr>
+					<h3 style="font-size:50">Experience</h3>
+					<ul>
+						<li>{{ current_user.employer }}</li>
+						<li>{{ current_user.jobtitle }}</li>
+					
+				  </ul>
+					<hr>
+					<hr>
+				</div>
+		
+					
+		
+    </div>
+	
+			  
+		  </div>
+		  <div class="container">
+			  <h3 class="text-dark">Timeline</h3>
+			  <br>
+			 <hr style="border:3px solid #444DF8" >
+		  </div>
+  </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+
+{% endblock content %}
