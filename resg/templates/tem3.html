@@ -5,21 +5,27 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Untitled Document</title>
-	  
-    <!-- Bootstrap -->
-	<link href="file:///D|/Python/css/bootstrap-4.4.1.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	
+	<!-- Popper JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	
+	<!-- Latest compiled JavaScript -->
 	<link href="https://fonts.googleapis.com/css?family=Calistoga" rel="stylesheet">
 	  <link href='https://fonts.googleapis.com/css?family=Forum' rel='stylesheet'>
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
   </head>
   <body class="img-fluid">
-  <div class="row" style="background: url(file:///D:/Python/RG/resg/static/bgimg.jpg)">
-  	  <div class="col-lg-3 offset-lg-2"><img src="D:\Python\RG\resg\static\logo.jfif" class="rounded-circle img-thumbnail img-fluid" alt="Image"></div>
+  <div class="row" style="background: url(/static/bgimg.jpg)">
+  	  <div class="col-lg-3 offset-lg-2"><img src="/static/logo.jfif" class="rounded-circle img-thumbnail img-fluid" alt="Image"></div>
   	  <div class="col-lg-6">
-	    <h1 class="lead" style="font-size:400%">Username
+	    <h1 class="lead" style="font-size:400%">{{ current_user.name }}
 		  </h1>
 		  <br>
-	    <h4 style="font-family:'Forum'; ">I am a front end developer</h4>
+	    <h4 style="font-family:'Forum'; ">{{ current_user.prof }}</h4>
     </div>
   </div>
   <div class="row">
@@ -35,10 +41,10 @@
 				<div class="col-md-10">
 					<div class="card bg-light pl-3">
 
-						Made a functional game.<br>
-						Worked for Microsoft core team.<br>
-						Created the entire Adobe Dreamweaver.<br>
-						Made a robotic arm. <br>
+						{{ current_user.ach1 }}<br>
+						{{ current_user.ach2 }}<br>
+						{{ current_user.ach3 }}<br>
+						{{ current_user.ach4 }}<br>
 
 					</div>
 			</div>
@@ -55,10 +61,10 @@
 				<div class="col-md-10">
 					<div class="card bg-light pl-3">
 
-						A Creative Thinker.<br>
-						A Leader under pressure.<br>
-						A Smart Planed Scientist<br>
-						A Good Person. <br>
+						{{ current_user.skills1 }}<br>
+						{{ current_user.skills2 }}<br>
+						{{ current_user.skills3 }}<br>
+						{{ current_user.skills4 }} <br>
 
 					</div>
 			</div>
@@ -75,10 +81,10 @@
 				<div class="col-md-10">
 					<div class="card bg-light pl-3">
 
-						Created a Machine Learning.<br>
-						Made a working Dynetics robot.<br>
-						Created the entire Adobe Dreamweaver.<br>
-						Made a robotic arm. <br>
+						{{ current_user.project1 }}<br>
+						{{ current_user.project2 }}<br>
+						{{ current_user.project3 }}<br>
+						{{ current_user.project4 }} <br>
 
 					</div>
 			</div>
@@ -92,7 +98,7 @@
 				<p>Address</p>
 			</div>
 			<div class="col-md-6">
-				<p>{{ address }}</p>
+				<p>{{ current_user.address }}</p>
 			</div>
 		</div>
 		<div class="row">
@@ -100,7 +106,7 @@
 				<p>Phone No.</p>
 			</div>
 			<div class="col-md-6">
-				<p>{{ Phone No. }}</p>
+				<p>+91 999955551</p>
 			</div>
 		</div>
 		<div class="row">
@@ -108,7 +114,7 @@
 				<p>Jobtitle</p>
 			</div>
 			<div class="col-md-6">
-				<p>{{ jobtitle }}</p>
+				<p>{{ current_user.jobtitle }}</p>
 			</div>
 		</div>
 		<div class="row">
@@ -116,7 +122,7 @@
 				<p>Employer</p>
 			</div>
 			<div class="col-md-6">
-				<p>{{ employer }}</p>
+				<p>{{ current_user.employer }}</p>
 			</div>
 		</div>
 	<hr class="alert-dark">
@@ -125,7 +131,7 @@
 				<p>School Name</p>
 			</div>
 			<div class="col-md-6">
-				<p>{{ school name }}</p>
+				<p>{{ current_user.schoolname }}</p>
 			</div>
 		</div>
 		<div class="row">
@@ -133,7 +139,7 @@
 				<p>Degree</p>
 			</div>
 			<div class="col-md-6">
-				<p>{{ degree }}</p>
+				<p>{{ current_user.degree }}</p>
 			</div>
 		</div>
 	<div class="row">
@@ -141,7 +147,7 @@
 				<p>Study</p>
 			</div>
 			<div class="col-md-6">
-				<p>{{ study }}</p>
+				<p>{{ current_user.study }}</p>
 			</div>
 		</div>
 		<div class="row">
@@ -149,14 +155,17 @@
 				<p>Date of Graduation</p>
 			</div>
 			<div class="col-md-6">
-				<p>{{ Dob }}</p>
+				<p>{{ current_user.date }}</p>
 			</div>
 		</div>
 	  </div>
   </div>
   <!-- body code goes here -->
 
-
+  <br>
+  <hr>
+  <h4>--------------End of Template--------------</h4>
+  <a href="{{ name }}"  target="_blank" download>Download</a>
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
   </body>
 </html>
