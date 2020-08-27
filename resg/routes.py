@@ -7,6 +7,7 @@ from resg import app, db, bcrypt
 from resg.forms import RF, LF
 from resg.models import User
 from flask_login import login_user, current_user, logout_user, login_required
+import requests
 
 
 def r_3_download():
@@ -180,12 +181,20 @@ def r_3_download():
         <!-- body code goes here -->
     </html>""")
     f.close()
-     
-    path_wkhtmltopdf = r'C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe'
-    options = {'enable-local-file-access': None}
-    config = pdfkit.configuration(wkhtmltopdf=path_wkhtmltopdf)
-    pdfkit.from_file(name, sname, configuration=config, options=options)
     
+    document = request.base_url
+    pdf = requests.get(f'http://api.pdflayer.com/api/convert?access_key=5da898cb4c3452684eccbb64db2c3c32&document_url={document}')
+    f = open('resg/pdfs/sankar.pdf', 'wb')
+    f.write(pdf.content)
+    f.close()
+
+    '''html = render_template(
+        name)
+    pdf = pdfkit.from_string(html, False)
+    response = make_response(pdf)
+    response.headers["Content-Type"] = "application/pdf"
+    response.headers["Content-Disposition"] = "inline; filename=output.pdf"
+    return response'''
 
 
 
@@ -202,9 +211,9 @@ def r_3_download():
 
 #SlenderBot Chromium
 @app.route("/")
-@app.route("/home")
+@app.route("/index")
 def home():
-    return render_template('home.html')
+    return render_template('index.html')
 
 @app.route("/register", methods=['POST','GET'])
 def register():
