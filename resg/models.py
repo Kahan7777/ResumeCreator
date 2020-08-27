@@ -1,6 +1,7 @@
 from resg import db, login_manager
 from flask_login import UserMixin
 
+#username: Zombie password: Zombiee!!
 @login_manager.user_loader
 def get_user(ident):
   return User.query.get(int(ident))
