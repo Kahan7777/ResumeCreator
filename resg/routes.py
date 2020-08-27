@@ -211,7 +211,7 @@ def r_3_download():
 
 #SlenderBot Chromium
 @app.route("/")
-@app.route("/index")
+@app.route("/index.html")
 def home():
     return render_template('index.html')
 
