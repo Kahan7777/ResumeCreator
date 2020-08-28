@@ -4,7 +4,7 @@ import secrets
 from PIL import Image
 from flask import render_template, url_for, flash, redirect, request, abort
 from resg import app, db, bcrypt
-from resg.forms import RF, LF
+from resg.forms import RF, LF, UA
 from resg.models import User
 from flask_login import login_user, current_user, logout_user, login_required
 
@@ -304,3 +304,57 @@ def resume_4():
 def next():
     name = "/static/" + current_user.name + '.pdf'
     return render_template("download_tem.html", name=name)
+
+@app.route("/account/update", methods=["GET", "POST"])
+@login_required 
+def accupd():
+    form = UA()
+    if form.validate_on_submit():
+        current_user.name = form.name.data                            
+        current_user.age = form.age.data
+        current_user.residence = form.residence.data 
+        current_user.prof = form.prof.data 
+        current_user.ach1 = form.ach1.data 
+        current_user.ach2 = form.ach2.data 
+        current_user.ach3 = form.ach3.data 
+        current_user.ach4 = form.ach4.data 
+        current_user.jobtitle = form.jobtitle.data 
+        current_user.employer = form.employer.data 
+        current_user.schoolname = form.schoolname.data 
+        current_user.degree = form.degree.data 
+        current_user.study = form.study.data 
+        current_user.date = form.date.data 
+        current_user.skills1 = form.skill1.data 
+        current_user.skills2 = form.skill2.data 
+        current_user.skills3 = form.skill3.data 
+        current_user.skills4 = form.skill4.data 
+        current_user.project1 = form.project1.data 
+        current_user.project2 = form.project2.data 
+        current_user.project3 = form.project3.data 
+        current_user.project4 = form.project4.data
+
+        db.session.commit()
+        return redirect("/account")
+    form.name.data = current_user.name
+    form.residence.data = current_user.residence
+    form.age.data = current_user.age
+    form.ach1.data = current_user.ach1
+    form.ach2.data = current_user.ach2
+    form.ach3.data = current_user.ach3
+    form.ach4.data = current_user.ach4
+    form.prof.data = current_user.prof
+    form.jobtitle.data = current_user.jobtitle
+    form.employer.data = current_user.employer
+    form.skill1.data = current_user.skills1
+    form.skill2.data = current_user.skills2
+    form.skill3.data = current_user.skills3
+    form.skill4.data = current_user.skills4
+    form.schoolname.data = current_user.schoolname
+    form.study.data = current_user.study
+    form.degree.data = current_user.degree
+    form.date.data = current_user.date
+    form.project1.data  = current_user.project1
+    form.project2.data = current_user.project2
+    form.project3.data = current_user.project3
+    form.project4.data = current_user.project4
+    return render_template("account-update.html", form=form)
