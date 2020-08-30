@@ -1,36 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Untitled Document</title>
-    <!-- Bootstrap -->
-	<link href="file:///D|/Python/css/bootstrap-4.4.1.css" rel="stylesheet">
-	
-  </head>
-  <body>
+{% extends "layout.html" %}
+{% block content %}
+	<br><br><br><br>
 	  <div class="container">
 		  <div class="row">
 			  <div class="col-md-3">
 				  <div style="background-color:peachpuff">
 					  <div style="text-align: center">
-					  <img src="D:\Python\RG\resg\static\logo - small.jfif" class="rounded-circle img-thumbnail img-fluid" alt="Image" ></div>
+					  <img src="/static/logo.jfif" class="rounded-circle img-thumbnail img-fluid" alt="Image" ></div>
 					  <div class="ml-3">
-				  	<h5>Name </h5>
-					<p><i>I am a data scientist</i></p>
-					<p><i>11 years old.</i></p>
-					<p><i>My Residense</i></p>
+				  	<h5>{{ current_user.name }}</h5>
+					<p><i>{{ current_user.prof }}</i></p>
+					<p><i>{{ current_user.age }}</i></p>
+					<p><i>{{ current_user.residence }}</i></p>
 					<hr>
 					<h6>Experience</h6>
-					<p><i>Jobtitle</i></p>
-					<p><i>Employer</i></p>
+					<p><i>{{ current_user.jobtitle }}</i></p>
+					<p><i>{{ current_user.employer }}</i></p>
 					<hr>
 						  <h6>Education</h6>
-						  <p><i>School Name</i></p>
-						  <p><i>Degree</i></p>
-						  <p><i>Study</i></p>
-						  <p><i>Date of Graduation</i></p>
+						  <p><i>{{ current_user.schoolname }}</i></p>
+						  <p><i>{{ current_user.degree }}</i></p>
+						  <p><i>{{ current_user.study }}</i></p>
+						  <p><i>{{ current_user.date }}</i></p>
 					  </div>
 				  </div>
 			  </div>
@@ -40,16 +31,16 @@
 				  <h3 style="color:peru; border-bottom:2px groove #000000; text-align:center">Achievements</h3>
 				  <div class="pl-4">
 					  <p style="border-left-width:2px; border-left-style: solid; border-left-color: darkgoldenrod; padding-left:3px; ">
-						Got the Medal of Code in India.
+						{{ current_user.ach1}}
 					  </p>
 					  <p style="border-left-width:2px; border-left-style: solid; border-left-color: darkgoldenrod; padding-left:3px; ">
-						Got the Medal of Code in India.
+						{{ current_user.ach2}}
 					  </p>
 					  <p style="border-left-width:2px; border-left-style: solid; border-left-color: darkgoldenrod; padding-left:3px; ">
-						Got the Medal of Code in India.
+						{{ current_user.ach3}}
 					  </p>
 					  <p style="border-left-width:2px; border-left-style: solid; border-left-color: darkgoldenrod; padding-left:3px; ">
-						Got the Medal of Code in India.
+						{{ current_user.ach4}}
 					  </p>
 			    </div>
 			  </div>
@@ -57,16 +48,16 @@
 				  <h3 style="color:peru; border-bottom:2px groove #000000; text-align:center">Skills</h3>
 				  <div class="pl-4">
 					  <p style="border-left-width:2px; border-left-style: solid; border-left-color: darkgoldenrod; padding-left:3px; ">
-						A Leader.
+						{{ current_user.skills1 }}
 					  </p>
 					  <p style="border-left-width:2px; border-left-style: solid; border-left-color: darkgoldenrod; padding-left:3px; ">
-						A Futurist.
+						{{ current_user.skills2 }}
 					  </p>
 					  <p style="border-left-width:2px; border-left-style: solid; border-left-color: darkgoldenrod; padding-left:3px; ">
-						A Composed person.
+						{{ current_user.skills3 }}
 					  </p>
 					  <p style="border-left-width:2px; border-left-style: solid; border-left-color: darkgoldenrod; padding-left:3px; ">
-						A Learner.
+						{{ current_user.skills4 }}
 					  </p>
 			    </div>
 			  </div>
@@ -74,16 +65,16 @@
 				  <h3 style="color:peru; border-bottom:2px groove #000000; text-align:center">Projects</h3>
 				  <div class="pl-4">
 					  <p style="border-left-width:2px; border-left-style: solid; border-left-color: darkgoldenrod; padding-left:3px; ">
-						Made a Selenium webscraper that exploits bugs.
+						{{ current_user.project1 }}
 					  </p>
 					  <p style="border-left-width:2px; border-left-style: solid; border-left-color: darkgoldenrod; padding-left:3px; ">
-						Made a Twitter counterpart. With Greater Features.
+						{{ current_user.project2 }}
 					  </p>
 					  <p style="border-left-width:2px; border-left-style: solid; border-left-color: darkgoldenrod; padding-left:3px; ">
-						Made a beginner friendly code platform for Dart.
+						{{ current_user.project3 }}
 					  </p>
 					  <p style="border-left-width:2px; border-left-style: solid; border-left-color: darkgoldenrod; padding-left:3px; ">
-						Made a image detection and modification AI.
+						{{ current_user.project4 }}
 					  </p>
 			    </div>
 			  </div>
@@ -134,8 +125,4 @@
 		  </div>
 	  </div>
   	<!-- body code goes here -->
-
-
-	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
-  </body>
-</html>
+{% endblock content %}
