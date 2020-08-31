@@ -1,24 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Untitled Document</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
-	<!-- jQuery library -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	
-	<!-- Popper JS -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-	
-	<!-- Latest compiled JavaScript -->
-	<link href="https://fonts.googleapis.com/css?family=Calistoga" rel="stylesheet">
-	  <link href='https://fonts.googleapis.com/css?family=Forum' rel='stylesheet'>
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-  </head>
-  <body class="img-fluid">
+{% extends "layout.html" %}
+{% block content %}
+<br><br><br><br><br>
   <div class="row" style="background: url(/static/bgimg.jpg)">
   	  <div class="col-lg-3 offset-lg-2"><img src="/static/logo.jfif" class="rounded-circle img-thumbnail img-fluid" alt="Image"></div>
   	  <div class="col-lg-6">
@@ -162,11 +144,5 @@
   </div>
   <!-- body code goes here -->
 
-  <br>
-  <hr>
-  <br><br><br><br><br><br>
-  <h4>--------------End of Template--------------</h4>
-  <a class="btn btn-info" href="/resume/download">
-	Download From Here!
-	</a>
-</html>
+  
+{% endblock content %}
